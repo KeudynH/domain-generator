@@ -2,10 +2,23 @@
 import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+let pronoun = ["the", "our"];
+let adj = ["incredible", "amazing", "suspicious"];
+let noun = ["shop", "tarantula", "messi"];
+let extension = [".net", ".org", ".com"];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+let ul = document.createElement("ul");
+document.getElementById("domain-name").appendChild(ul);
+
+for (let i = 0; i < pronoun.length; i++) {
+  for (let j = 0; j < adj.length; j++) {
+    for (let k = 0; k < noun.length; k++) {
+      for (let l = 0; l < extension.length; l++) {
+        let li = document.createElement("li");
+        ul.appendChild(li);
+        let result = `${pronoun[i]}${adj[j]}${noun[k]}${extension[l]}`;
+        li.innerHTML = li.innerHTML + result;
+      }
+    }
+  }
+}
